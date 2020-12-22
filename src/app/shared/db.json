@@ -1,0 +1,38 @@
+{
+  "lang": [
+    {
+      "iso": "uk",
+      "name": "Ukrainian"
+    },
+    {
+      "iso": "en",
+      "name": "English"
+    },
+    {
+      "iso": "ru",
+      "name": "Russian"
+    },
+    {
+      "iso": "fr",
+      "name": "French"
+    },
+    {
+      "iso": "it",
+      "name": "Italian"
+    }
+  ],
+  "gender": [
+    {
+      "value": "male",
+      "text": "Male"
+    },
+    {
+      "value": "female",
+      "text": "Female"
+    },
+    {
+      "value": "other",
+      "text": "Other"
+    }
+  ]
+}

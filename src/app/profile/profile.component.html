@@ -1,0 +1,44 @@
+<div class="container p-3">
+  <h2 class="text-primary">User Profile</h2>
+      <form class="row border border-primary bg-light p-3" [formGroup]="form" (ngSubmit)="saveChanges()">
+        <div class="col-12 mb-0 d-flex justify-content-end">
+          <button class="btn btn-dark" type="button" *ngIf="!isEdit" (click)="editHandler()">Edit</button>
+          <button class="btn btn-primary mr-2" type="submit" *ngIf="isEdit">Save</button>
+          <button class="btn btn-outline-dark" type="reset" *ngIf="isEdit" (click)="cancelHandler()">Cancel</button>
+        </div>
+
+        <div class="col-md-6 form-group">
+          <label>Name</label>
+          <input class="form-control" type="text" formControlName="name">
+        </div>
+
+        <div class="col-md-6 form-group">
+          <label>Date of birth</label>
+          <input class="form-control" type="date" formControlName="date">
+        </div>
+
+        <div class="col-md-6 form-group">
+          <label>Country of birth</label>
+          <select class="form-control" formControlName="country">
+            <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+          </select>
+        </div>
+
+        <div class="col-md-6 form-group">
+          <label>Languages</label>
+          <select class="form-control" formControlName="languages">
+            <option *ngFor="let language of languages" [value]="language.iso">{{ language.name }}</option>
+          </select>
+        </div>
+
+        <div class="col-12 form-group">
+          <p>Gender</p>
+          <div *ngFor="let genderItem of gender">
+            <label>
+              <input type="radio" formControlName="gender" [value]="genderItem.value">
+              {{ genderItem.text }}
+            </label>
+          </div>
+        </div>
+      </form>
+</div>
